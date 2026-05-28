@@ -15,7 +15,11 @@ def read_excel(file):
     df = pd.read_excel(file)
     return df
 
-df = pd.read_excel('data\sales.xls')
+import os
+import pandas as pd
+
+file_path = os.path.join(os.path.dirname(__file__), "data", "sales.xls")
+df = pd.read_excel(file_path)
 
 # -----------------------------
 # Page Title
