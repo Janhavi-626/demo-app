@@ -10,15 +10,11 @@ import plotly.express as px
 def read_excel(file):
     df = pd.read_excel(file)
     return df
-import streamlit as st
+import os
 import pandas as pd
 
-st.title("Sales Dashboard")
-
-uploaded_file = st.file_uploader("Upload your Excel file", type=["xls", "xlsx"])
-
-if uploaded_file:
-    df = pd.read_excel(uploaded_file)
+file_path = os.path.join("data", "sales.xls")
+df = pd.read_excel(file_path)
 
     st.write("Shape of dataset:")
     st.write(df.shape)
