@@ -15,12 +15,15 @@ import pandas as pd
 
 st.title("Sales Dashboard")
 
-# 👇 REPLACE OLD DATA LOADING WITH THIS
 uploaded_file = st.file_uploader("Upload your Excel file", type=["xls", "xlsx"])
 
 if uploaded_file:
     df = pd.read_excel(uploaded_file)
 
+    st.write("Shape of dataset:")
+    st.write(df.shape)
+
+    st.write("Data Preview:")
     st.write(df)
 st.title('Sales Data Analysis')
 st.write('This is a simple Streamlit app to ' \
