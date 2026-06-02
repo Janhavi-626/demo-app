@@ -11,7 +11,7 @@ st.set_page_config(
 def read_excel(file):
     df = pd.read_excel(file)
     return df
-df = pd.read_excel('data\sales.xls')
+df = pd.read_excel("data\sales.xls")
 
 df.columns = df.columns.str.strip()
 
