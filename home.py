@@ -10,7 +10,18 @@ import plotly.express as px
 def read_excel(file):
     df = pd.read_excel(file)
     return df
-df = pd.read_excel('data/sales.xls')
+import streamlit as st
+import pandas as pd
+
+st.title("Sales Dashboard")
+
+# 👇 REPLACE OLD DATA LOADING WITH THIS
+uploaded_file = st.file_uploader("Upload your Excel file", type=["xls", "xlsx"])
+
+if uploaded_file:
+    df = pd.read_excel(uploaded_file)
+
+    st.write(df)
 st.title('Sales Data Analysis')
 st.write('This is a simple Streamlit app to ' \
 'analyze sales data.')
