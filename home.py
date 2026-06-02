@@ -10,17 +10,7 @@ import plotly.express as px
 def read_excel(file):
     df = pd.read_excel(file)
     return df
-import os
-import pandas as pd
-
-file_path = os.path.join("data", "sales.xls")
-df = pd.read_excel(file_path)
-
-    st.write("Shape of dataset:")
-    st.write(df.shape)
-
-    st.write("Data Preview:")
-    st.write(df)
+df = pd.read_excel('data/sales.xls')
 st.title('Sales Data Analysis')
 st.write('This is a simple Streamlit app to ' \
 'analyze sales data.')
